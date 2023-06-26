@@ -9,6 +9,8 @@
 
  Implementation:
      [Notes on implementation]
+
+to run ntuplizer: ```cmsRun test/llpgana_mc_aod.py``` 
 */
 //
 // Original Author:  Jack W King III
