@@ -1547,8 +1547,11 @@ void KUCMSNtupilizer::setBranchesRecHits(){
     EcalRecHitBM.makeBranch("SwCross","ERH-swCross",VFLOAT);
     EcalRecHitBM.makeBranch("eta","ERH_eta",VFLOAT);
     EcalRecHitBM.makeBranch("phi","ERH_phi",VFLOAT);	
+    EcalRecHitBM.makeBranch("x","ERH_x",VFLOAT);
+    EcalRecHitBM.makeBranch("y","ERH_y",VFLOAT);
+    EcalRecHitBM.makeBranch("z","ERH_z",VFLOAT);
 
-	EcalRecHitBM.attachBranches(outTree);
+    EcalRecHitBM.attachBranches(outTree);
 
 }//<<>>setBranchesRecHits()
 
@@ -1573,7 +1576,7 @@ void KUCMSNtupilizer::processRecHits(){
         const auto geometry( isEB ? barrelGeometry : endcapGeometry );
         const auto recHitPos = geometry->getGeometry(recHit.detid())->getPosition();
         const float eta = recHitPos.eta();
-        const float eta = recHitPos.phi();
+        const float phi = recHitPos.phi();
         const auto rhX = recHitPos.x();
         const auto rhY = recHitPos.y();
         const auto rhZ = recHitPos.z();
@@ -1604,6 +1607,9 @@ void KUCMSNtupilizer::processRecHits(){
         EcalRecHitBM.fillBranch("SwCross",swisscross);
         EcalRecHitBM.fillBranch("eta",eta);
         EcalRecHitBM.fillBranch("phi",phi);
+        EcalRecHitBM.fillBranch("x",rhX);
+        EcalRecHitBM.fillBranch("y",rhY);
+        EcalRecHitBM.fillBranch("z",rhZ);
         //EcalRecHitBM.fillBranch("rhisWeird",recHit.checkFlag(EcalRecHit::kWeird));
         //EcalRecHitBM.fillBranch("rhisDiWeird",recHit.checkFlag(EcalRecHit::kDiWeird));
 
