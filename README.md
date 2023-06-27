@@ -4,7 +4,8 @@ Implementation: [Notes on implementation]
 
 to run ntuplizer: 
 ```
-cd CMSSW_X_X_X/src
+cmsrel CMSSW_13_X_X
+cd CMSSW_13_X_X/src
 scram b
 cd KUCMSNtupleizer
 cmsRun test/llpgana_mc_aod.py
