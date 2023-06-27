@@ -820,7 +820,7 @@ void KUCMSNtupilizer::setBranchesJets(){
     JetAK4ChsBM.makeBranch("CEMF","Jet_chEmEF",VFLOAT,"charged Electromagnetic Energy Fraction");
     JetAK4ChsBM.makeBranch("MUF","Jet_muEF",VFLOAT,"muon Energy Fraction");
     JetAK4ChsBM.makeBranch("NHM","Jet_neHM",VFLOAT,"neutral hadron multiplicity");
-    JetAK4ChsBM.makeBranch("CHM","Jet_chHM",VFLOAT."charged hadron multiplicity");
+    JetAK4ChsBM.makeBranch("CHM","Jet_chHM",VFLOAT,"charged hadron multiplicity");
 
     JetAK4ChsBM.makeBranch("Parts","Jet_egIndxs",VVUINT);
     JetAK4ChsBM.makeBranch("DrRhIds","Jet_drRhIds",VVUINT);
@@ -980,7 +980,7 @@ void KUCMSNtupilizer::processJets(){
 				auto jtgjdp = std::abs(jetPt-gjpt)/gjpt;
                 if( jtgjdr < goodDr && jtgjdp < goodDpt ){
                     goodDr = jtgjdr;
-			v		goodDpt = jtgjdp;
+		    goodDpt = jtgjdp;
                     matchedIdx = index;
                 }//<<>>if( jtgjdr <= goodDr )
                 index++;
